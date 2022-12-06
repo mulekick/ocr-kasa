@@ -1,0 +1,109 @@
+@charset "utf-8";
+@import "mixins";
+
+body {
+    width: 1240px;
+    // remove default margin
+    margin: 0 calc((100% - 1240px) / 2);
+}
+
+header {
+    // content layout management
+    @include flex($direction: row, $align: center, $justify: space-between);
+    @include box();
+
+    ul {
+        // content layout management
+        @include flex($direction: row, $align: center);
+        @include box($width: inherit);
+        // style overrides
+        list-style-type: none;
+        padding-left: 0;
+        // ul elements
+        a {
+            @include box($width: inherit);
+            @include span();
+            // style overrides
+            text-decoration: none;
+            // pseudo styles
+            &:hover, &:active {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+main {
+    // content layout management
+    @include flex($align: flex-start, $justify: flex-start);
+    @include box();
+}
+
+div.container {
+    // content layout management
+    @include flex($align: center, $justify: center);
+    @include box($width: 100%, $height: fit-content, $padding: 0, $backcolor: unset, $radius: 25px);
+}
+
+div.banner {
+    // style overrides
+    background-color: #000000;
+    mix-blend-mode: darken;
+
+    span {
+        @include span($color: $color_font_secondary, $size: $font_large);
+        // style overrides
+        position: absolute;
+        z-index: 1;
+    }
+
+    img {
+        @include box($width: 100%, $height: 100%, $padding: 0, $backcolor: unset, $radius: inherit);
+        // style overrides
+        object-fit: cover;
+        opacity: 0.75;
+    }
+}
+
+div.gallery {
+    // style overrides
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap; 
+    padding: 45px 45px 0 45px;
+    background-color: #F7F7F7;
+
+    article {
+
+        margin: 0 calc((100% - 1020px) / 2) 45px 0;
+    
+        div.background {
+            @include box($width: 340px, $height: 340px, $backcolor: $color_font_primary, $radius: 10px);
+            // style overrides
+            position: absolute;
+        }
+        
+        div.forefront {
+            // content layout management
+            @include flex($direction: row, $align: flex-end, $justify: flex-start);
+            @include box($width: 340px, $height: 340px, $padding: 10px, $backcolor: unset, $radius: 10px);
+    
+            // style overrides
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+            opacity: 0.75;
+    
+            span {
+                @include span($margin: 10px, $color: $color_font_secondary, $size: $font_small);
+                
+                // style overrides
+                width: 50%;
+                opacity: 1;
+            }
+        }
+    }
+
+    // keep the thumbnail layout left aligned whatsoever
+    article:nth-of-type(3n) {
+        margin-right: 0;
+    }
+}
