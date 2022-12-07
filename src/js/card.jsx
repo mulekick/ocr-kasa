@@ -1,14 +1,16 @@
 const
-    // init article component
-    Article = props => {
-        const a = null;
+    // init card component
+    Card = props => {
+        const
+            // extract props
+            {title} = props;
 
         return <article className="container">
             <div className="background" />
             <div className="forefront">
-                <span>{ props.title }</span>
+                <span>{ title }</span>
             </div>
         </article>;
     };
 
-export default Article;
+export default Card;

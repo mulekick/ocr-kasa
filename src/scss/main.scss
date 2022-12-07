@@ -47,6 +47,7 @@ div.container {
 
 div.banner {
     // style overrides
+    margin-bottom: 20px;
     background-color: #000000;
     mix-blend-mode: darken;
 
@@ -69,21 +70,22 @@ div.gallery {
     // style overrides
     flex-direction: row;
     justify-content: flex-start;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     padding: 45px 45px 0 45px;
     background-color: #F7F7F7;
 
-    article {
+    a {
 
         margin: 0 calc((100% - 1020px) / 2) 45px 0;
+        text-decoration: none;
     
-        div.background {
+        article div.background {
             @include box($width: 340px, $height: 340px, $backcolor: $color_font_primary, $radius: 10px);
             // style overrides
             position: absolute;
         }
         
-        div.forefront {
+        article div.forefront {
             // content layout management
             @include flex($direction: row, $align: flex-end, $justify: flex-start);
             @include box($width: 340px, $height: 340px, $padding: 10px, $backcolor: unset, $radius: 10px);
@@ -103,7 +105,58 @@ div.gallery {
     }
 
     // keep the thumbnail layout left aligned whatsoever
-    article:nth-of-type(3n) {
+    a:nth-of-type(3n) {
         margin-right: 0;
+    }
+}
+
+div.error {
+    h1 {
+        @include span($size: 350px, $weight: 500, $color: $color_font_primary)
+    }
+
+    h4 {
+        @include span($weight: 500, $color: $color_font_primary)
+    }
+
+    a {
+        @include span($margin: 185px 0 0 0, $size: $font_small, $weight: 500, $color: $color_font_primary)
+    }
+}
+
+div.accordion {
+    // content layout management
+    @include flex();
+    @include box($width: 80%, $padding: 0, $backcolor: unset, $radius: 5px);
+
+    // style overrides
+    margin: 15px 10%;
+
+    div:nth-child(1) {
+        // content layout management
+        @include flex($direction: row, $align: stretch, $justify: space-between);
+        @include box($width: 100%, $padding: 10px, $backcolor: $color_font_primary, $radius: 5px);
+        @include span($margin: 0 0 -5px 0, $color: $color_font_secondary, $size: $font_small);
+
+        // style overrides
+        z-index: 1;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    div:nth-child(2) {
+        @include box($width: 100%, $padding: 15px 10px 10px 10px, $backcolor: #F7F7F7, $radius: 5px);
+        @include span($margin: 0, $color: $color_font_primary, $size: $font_small);
+    }
+
+    & img.open {
+        // rotate chevron-up icon from 0° to 180°, clockwise
+        @include spin($start: 0deg, $finish: 180deg, $direction: normal);
+    }
+    
+    & img.close {
+        // rotate chevron-up icon from 180° to 0°, counterclockwise
+        @include spin($start: 180deg, $finish: 0deg, $direction: reverse);
     }
 }

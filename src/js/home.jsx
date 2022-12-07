@@ -1,29 +1,36 @@
 // import modules
-import Article from "./article.jsx";
+import {Link, useLoaderData} from "react-router-dom";
+import Banner from "./banner.jsx";
+import Card from "./card.jsx";
 
 // webpack allows direct import of assets in js files ...
-import background from "../img/background-default.png";
+import background from "../img/background-home.png";
 
 const
     // init error page component
     HomePage = props => {
-        const a = null;
+        const
+            // retrieve route-specific data
+            adz = Array.from(useLoaderData());
 
+        // return component
         return <main>
-            <div className="container banner">
-                <span>Chez vous, partout et ailleurs</span>
-                <img src={ background } alt="seashore" />
-            </div>
-            <br />
+            <Banner caption="Chez vous, partout et ailleurs" background={ background } alt="seashore" />
             <div className="container gallery">
-                <Article title={ `Titre de la location` }/>
-                <Article title={ `Titre de la location` }/>
-                <Article title={ `Titre de la location` }/>
-                <Article title={ `Titre de la location` }/>
-                <Article title={ `Titre de la location` }/>
-                <Article title={ `Titre de la location` }/>
-                <Article title={ `Titre de la location` }/>
-                <Article title={ `Titre de la location` }/>
+                {
+                    adz
+                        // render ad
+                        .map(x => {
+                            const
+                                // extract properties
+                                {id, title} = x;
+
+                            // return component
+                            return <Link to={`ads/${ id }`}>
+                                <Card key={ id } title={ title }/>
+                            </Link>;
+                        })
+                }
             </div>
         </main>;
     };

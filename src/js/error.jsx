@@ -1,16 +1,22 @@
+/* eslint-disable no-shadow */
+
 // import modules
-import {useRouteError} from "react-router-dom";
+import {useRouteError, Link} from "react-router-dom";
 
 const
     // init error page component
     ErrorPage = props => {
         const
             // retrieve error
-            e = useRouteError();
+            {status} = useRouteError();
+
 
         return <main>
-            <h1>{ props.message }</h1>
-            <p>{ e.statusText || e.message }</p>
+            <div className="container error">
+                <h1>{ status }</h1>
+                <h4>{ status === 404 ? `Oups! La page que vous demandez n'existe pas.` : `Aïe ! le serveur a rencontré une erreur.` }</h4>
+                <Link to={ `` }>Retourner sur la page d’accueil</Link>
+            </div>
         </main>;
     };
 
