@@ -1,9 +1,9 @@
 // import modules
-import Accordion from "./accordion.jsx";
-import Banner from "./banner.jsx";
+import Accordion from "../components/accordion.jsx";
+import Banner from "../components/banner.jsx";
 
 // webpack allows direct import of assets in js files ...
-import background from "../img/background-about.png";
+import background from "../../img/background-about.png";
 
 const
     // init about component

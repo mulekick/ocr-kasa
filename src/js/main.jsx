@@ -1,7 +1,7 @@
 // import modules
 import React from "react";
 import {Outlet, Link} from "react-router-dom";
-import ErrorPage from "./error.jsx";
+import ErrorPage from "./pages/error.jsx";
 
 // webpack allows direct import of assets in js files ...
 import logo from "../img/logo-kasa.png";
@@ -15,7 +15,9 @@ const
 
         return <div>
             <header>
-                <img src={ logo } alt="logo" />
+                <Link to={ `` }>
+                    <img src={ logo } alt="logo" />
+                </Link>
                 <nav>
                     <ul>
                         <li><Link to={ `` }>Accueil</Link></li>

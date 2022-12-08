@@ -2,7 +2,7 @@
 import {useState, useRef, useEffect} from "react";
 
 // webpack allows direct import of assets in js files ...
-import up from "../img/fa-chevron-up.svg";
+import up from "../../img/fa-chevron-up.svg";
 
 const
     // init about component

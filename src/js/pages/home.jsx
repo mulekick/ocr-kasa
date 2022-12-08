@@ -1,10 +1,10 @@
 // import modules
 import {Link, useLoaderData} from "react-router-dom";
-import Banner from "./banner.jsx";
-import Card from "./card.jsx";
+import Banner from "../components/banner.jsx";
+import Card from "../components/card.jsx";
 
 // webpack allows direct import of assets in js files ...
-import background from "../img/background-home.png";
+import background from "../../img/background-home.png";
 
 const
     // init error page component
