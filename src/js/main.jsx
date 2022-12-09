@@ -5,6 +5,7 @@ import ErrorPage from "./pages/error.jsx";
 
 // webpack allows direct import of assets in js files ...
 import logo from "../img/logo-kasa.png";
+import footer from "../img/logo-kasa-footer.png";
 
 const
     // init app
@@ -13,6 +14,7 @@ const
             // extract props
             {error} = props;
 
+        // return <>....</> as an alternative
         return <div>
             <header>
                 <Link to={ `` }>
@@ -33,6 +35,10 @@ const
                 */
                 error ? <ErrorPage message="an error occured :"/> : <Outlet />
             }
+            <footer>
+                <img src={ footer } alt="footer" />
+                <p>© 2020 Kasa. All rights reserved</p>
+            </footer>
         </div>;
     };
 

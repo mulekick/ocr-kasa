@@ -62,7 +62,8 @@ const
             // a single component ...
             children: [ {
                 // default outlet for route / (homepage)
-                path: ``,
+                // path: ``,
+                index: true,
                 element: <Home />,
                 // load ads list
                 loader: loadLocationsList

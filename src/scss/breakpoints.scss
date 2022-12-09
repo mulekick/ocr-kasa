@@ -3,16 +3,12 @@
 
 /* ================= MOBILE STYLES ================== */
 @media (max-width: 768px) {
-    
+
+    /* ========== GENERAL STYLES ========== */
     body {
         // style overrides
         width: unset;
         margin: unset;
-    }
-
-    main {
-        // style overrides
-        padding: 0 15px;
     }
 
     header {
@@ -29,17 +25,21 @@
         }
     }
 
-    div.banner {
+    main {
         // style overrides
-        border-radius: 10px;
-        span {
-            font-size: $font_medium;
-        }
-    
-        img {
-            height: 150px;
-        }
+        padding: 0 15px;
     }
+
+    footer {
+        // style overrides
+        width: 100%;
+        margin: 0;
+        font-size: $font_small;
+    }
+
+    /* ======= PAGE SPECIFIC STYLES ======= */
+
+    // home page
 
     div.gallery {
         // style overrides
@@ -64,23 +64,7 @@
         }
     }
 
-    div.cover {
-        // style overrides
-        height: 300px;
-        margin-bottom: 20px;
-    
-        > div {
-            margin-bottom: -300px;
-    
-            > img {
-                height: 35px;
-    
-                &:hover {
-                    cursor: pointer;
-                }
-            }
-        }
-    }
+    // details page
 
     div.details {
         // ad details
@@ -134,6 +118,59 @@
             }
         }
     }
+
+    // error page
+
+    div.error {
+        // style overrides
+        min-height: 500px;
+
+        h1 {
+            @include span($size: 100px, $weight: 700, $color: $color_font_primary)
+        }
+
+        h4 {
+            text-align: center;
+            width: 80%;
+        }
+    }
+    /* ==== COMPONENT SPECIFIC STYLES ===== */
+
+    // image banner
+
+    div.banner {
+        // style overrides
+        border-radius: 10px;
+        span {
+            font-size: $font_medium;
+        }
+    
+        img {
+            height: 150px;
+        }
+    }
+
+    // slideshow
+
+    div.slideshow {
+        // style overrides
+        height: 300px;
+        margin-bottom: 20px;
+    
+        > div {
+            margin-bottom: -300px;
+    
+            > img {
+                height: 35px;
+    
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    // accordion
 
     div.about .accordion {
         // style overrides

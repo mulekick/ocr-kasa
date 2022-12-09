@@ -14,7 +14,7 @@ const
             // use state for conditional rendering ...
             [ position, setPosition ] = useState(0);
 
-        return <div className="container cover">
+        return <div className="container slideshow">
             {
                 // conditional rendering of slideshow buttons ...
                 pictures.length > 1 ?
