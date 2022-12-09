@@ -260,7 +260,7 @@ div.accordion {
 
     div:nth-child(1) {
         // content layout management
-        @include flex($direction: row, $align: stretch, $justify: space-between);
+        @include flex($direction: row, $justify: space-between);
         @include box($width: 100%, $padding: 10px, $backcolor: $color_font_primary, $radius: 5px);
         @include span($margin: 0 0 -5px 0, $color: $color_font_secondary, $size: $font_medium);
 
@@ -281,12 +281,16 @@ div.accordion {
         }
     }
 
-    & img.open {
+    img {
+        height: 20px;
+    }
+
+    img.open {
         // rotate chevron-up icon from 0° to 180°, clockwise
         @include spin($start: 0deg, $finish: 180deg, $direction: normal);
     }
     
-    & img.close {
+    img.close {
         // rotate chevron-up icon from 180° to 0°, counterclockwise
         @include spin($start: 180deg, $finish: 0deg, $direction: reverse);
     }

@@ -21,8 +21,8 @@ const
             if (active !== null) {
                 // remove dead animations
                 chevron.current.classList.remove(active ? `open` : `close`);
-                // add animations back to run on next repaint
-                requestAnimationFrame(() => requestAnimationFrame(() => chevron.current.classList.add(active ? `close` : `open`)));
+                // add animations back to run on next repaint (test to remove console error on navigation)
+                requestAnimationFrame(() => requestAnimationFrame(() => chevron.current && chevron.current.classList.add(active ? `close` : `open`)));
             }
         });
 
@@ -32,7 +32,7 @@ const
                 { /* bind ref to DOM element at render time */ }
                 <img src={ up } alt="open" ref={ chevron } />
             </div>
-            {active ? <div><p>{ text }</p></div> : null}
+            {active ? <div>{ text }</div> : null}
         </div>;
     };
 

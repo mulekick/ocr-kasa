@@ -3,7 +3,9 @@
 // import modules
 import {useLoaderData} from "react-router-dom";
 import Slideshow from "../components/slideshow.jsx";
-import Description from "../components/description.jsx";
+import Title from "../components/title.jsx";
+import User from "../components/user.jsx";
+import Accordion from "../components/accordion.jsx";
 
 const
     // init ad details component
@@ -14,7 +16,16 @@ const
 
         return <main>
             <Slideshow title={ title } pictures={ pictures } />
-            <Description title={title} description={description} host={host} rating={rating} location={location} equipments={equipments} tags={tags} />
+            <div className="container details">
+                <div>
+                    <Title title={ title } location={ location } tags={ tags } />
+                    <User user={ host } rating={ rating } />
+                </div>
+                <div>
+                    <Accordion title="Description" text={ description } />
+                    <Accordion title="Equipements" text={ equipments.map((x, i) => <p key={ String(i) }>{ x }</p>) } />
+                </div>
+            </div>
         </main>;
     };
 
