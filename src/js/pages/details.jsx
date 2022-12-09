@@ -1,16 +1,20 @@
+/* eslint-disable no-shadow */
+
 // import modules
 import {useLoaderData} from "react-router-dom";
 import Slideshow from "../components/slideshow.jsx";
+import Description from "../components/description.jsx";
+
 const
     // init ad details component
     DetailsPage = props => {
         const
             // retrieve route-specific data
-            {id, title, cover, pictures, description, host, rating, location, equipments, tags} = useLoaderData();
+            {title, pictures, description, host, rating, location, equipments, tags} = useLoaderData();
 
         return <main>
             <Slideshow title={ title } pictures={ pictures } />
-            <h1>{ `This page should display ad details about ad ${ title }` }</h1>
+            <Description title={title} description={description} host={host} rating={rating} location={location} equipments={equipments} tags={tags} />
         </main>;
     };
 

@@ -1,0 +1,144 @@
+@charset "utf-8";
+@import "mixins";
+
+/* ================= MOBILE STYLES ================== */
+@media (max-width: 768px) {
+    
+    body {
+        // style overrides
+        width: unset;
+        margin: unset;
+    }
+
+    main {
+        // style overrides
+        padding: 0 15px;
+    }
+
+    header {
+        img {
+            // style overrides
+            height: 60px;
+        }
+    
+        ul {
+            // ul elements
+            a {
+                font-size: $font_small;
+            }
+        }
+    }
+
+    div.banner {
+        // style overrides
+        border-radius: 10px;
+        span {
+            font-size: $font_medium;
+        }
+    
+        img {
+            height: 150px;
+        }
+    }
+
+    div.gallery {
+        // style overrides
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        background-color: #ffffff;
+
+        a {
+            width: 100%;
+            margin: 0 0 20px 0;
+
+            article div.background {
+                width: calc(100% - 30px);
+                height: 275px;
+            }
+
+            article div.forefront {
+                width: inherit;
+                height: 275px;
+            }
+        }
+    }
+
+    div.cover {
+        // style overrides
+        height: 300px;
+        margin-bottom: 20px;
+    
+        > div {
+            margin-bottom: -300px;
+    
+            > img {
+                height: 35px;
+    
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    div.details {
+        // ad details
+        > div:nth-of-type(1) {
+            // style overrides
+            flex-direction: column;
+            
+            // description
+            > div:nth-of-type(1) {
+                width: 100%;
+            }
+
+            // identity and rating        
+            > div:nth-of-type(2) {
+                @include flex($direction: row-reverse, $justify: space-between);
+                width: 100%;
+                margin-top: 20px;
+
+                // user identity
+                div:nth-of-type(1) {
+                    // user pic
+                    img:nth-of-type(1) {
+                        height: 45px;
+                        border-radius: 50%;
+                    } 
+                }
+
+                // rating
+                p:nth-of-type(1) {
+
+                    img {
+                        height: 15px;
+                        width: 15px;
+                    }
+                }
+            }
+        }
+
+        // accordions
+        > div:nth-of-type(2) {
+            // style overrides
+            flex-direction: column;
+
+            > div.accordion {
+                width: 100%;
+                margin-top: 20px;
+            }
+        }
+    }
+
+    div.about .accordion {
+        // style overrides
+        width: 100%;
+        margin: 15px 0;
+
+        div {
+            font-size: unset;
+        }
+    }
+
+}

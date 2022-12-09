@@ -29,10 +29,10 @@ const
         return <div className="accordion">
             <div onClick={ setActive.bind({}, active === null ? true : !active) }>
                 { title }
-                {/* bind ref to DOM element at render time */}
+                { /* bind ref to DOM element at render time */ }
                 <img src={ up } alt="open" ref={ chevron } />
             </div>
-            {active ? <div>{ text }</div> : null}
+            {active ? <div><p>{ text }</p></div> : null}
         </div>;
     };
 

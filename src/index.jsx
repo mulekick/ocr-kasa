@@ -7,6 +7,7 @@ import Rooter from "./js/router.jsx";
 
 // direct import of SCSS files on the top component is enough
 import "./scss/main.scss";
+import "./scss/breakpoints.scss";
 
 ReactDOM
     // package react-dom/client needs only to be loaded on

@@ -148,6 +148,94 @@ div.cover {
     }
 }
 
+div.details {
+    // style overrides
+    align-items: unset;
+
+    // ad details
+    > div:nth-of-type(1) {
+        @include flex($direction: row, $justify: space-between);
+
+        // description
+        > div:nth-of-type(1) {
+            // title
+            p:nth-of-type(1) {
+                @include span($size: 36px);
+            }
+
+            // location
+            p:nth-of-type(2) {
+                @include span($size: $font_small);
+            }
+            
+            // tags list
+            p:nth-of-type(3) {
+                @include flex($direction: row, $justify: flex-start);
+
+                // style overrides
+                flex-wrap: wrap;
+            }
+
+            // tags
+            span.tag {
+                // content layout management
+                @include flex();
+                @include box($width: fit-content, $padding: 2.5px 25px, $backcolor: $color_font_primary, $radius: 10px);
+                @include span($margin: 5px 15px 5px 0, $weight: 300, $color: $color_font_secondary, $size: 14px);
+            }
+        }
+
+        // identity and rating        
+        > div:nth-of-type(2) {
+            // user identity
+            div:nth-of-type(1) {
+                @include flex($direction: row, $justify: space-between);
+
+                // user name
+                span:nth-of-type(1) {
+                    @include span($margin: 0 25px, $size: $font_small);
+                }
+
+                // user pic
+                img:nth-of-type(1) {
+                    height: 65px;
+                    border-radius: 50%;
+                } 
+            }
+
+            // rating
+            p:nth-of-type(1) {
+                @include flex($direction: row, $justify: flex-end);
+
+                img {
+                    height: 30px;
+                    width: 30px;
+                }
+            }
+
+        }
+    }
+
+    // accordions
+    > div:nth-of-type(2) {
+        @include flex($direction: row, $align: flex-start, $justify: space-between);
+
+        // style overrides
+        width: 100%;
+
+        > div.accordion {
+            // style overrides
+            margin: unset;
+            width: 47.5%;
+
+            * {
+                // style overrides
+                font-size: $font_small;
+            }
+        }
+    }
+}
+
 div.error {
     h1 {
         @include span($size: 350px, $weight: 500, $color: $color_font_primary)
@@ -164,7 +252,7 @@ div.error {
 
 div.accordion {
     // content layout management
-    @include flex();
+    @include flex($justify: flex-start);    
     @include box($width: 80%, $padding: 0, $backcolor: unset, $radius: 5px);
 
     // style overrides
@@ -174,7 +262,7 @@ div.accordion {
         // content layout management
         @include flex($direction: row, $align: stretch, $justify: space-between);
         @include box($width: 100%, $padding: 10px, $backcolor: $color_font_primary, $radius: 5px);
-        @include span($margin: 0 0 -5px 0, $color: $color_font_secondary, $size: $font_small);
+        @include span($margin: 0 0 -5px 0, $color: $color_font_secondary, $size: $font_medium);
 
         // style overrides
         z-index: 1;
@@ -184,8 +272,13 @@ div.accordion {
         }
     }
     div:nth-child(2) {
-        @include box($width: 100%, $padding: 15px 10px 10px 10px, $backcolor: #F7F7F7, $radius: 5px);
-        @include span($margin: 0, $color: $color_font_primary, $size: $font_small);
+        @include box($width: 100%, $padding: 25px 15px, $backcolor: #F7F7F7, $radius: 5px);
+        @include span($margin: 0, $color: $color_font_primary, $size: $font_medium);
+
+        p {
+            // style overrides
+            margin: 5px 0;
+        }
     }
 
     & img.open {

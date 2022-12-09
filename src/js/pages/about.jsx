@@ -12,10 +12,12 @@ const
 
         return <main>
             <Banner caption="" background={ background } alt="mountain" />
-            <Accordion title="Fiabilité" text="broken 😭" />
-            <Accordion title="Respect" text="La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme." />
-            <Accordion title="Service" text="broken 😭" />
-            <Accordion title="Responsabilité" text="broken 😭" />
+            <div className="container about">
+                <Accordion title="Fiabilité" text="broken 😭" />
+                <Accordion title="Respect" text="La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme." />
+                <Accordion title="Service" text="broken 😭" />
+                <Accordion title="Responsabilité" text="broken 😭" />
+            </div>
         </main>;
     };
 

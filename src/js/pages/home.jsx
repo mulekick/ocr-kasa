@@ -25,9 +25,9 @@ const
                                 // extract properties
                                 {id, title} = x;
 
-                            // return component
-                            return <Link to={`ads/${ id }`}>
-                                <Card key={ id } title={ title }/>
+                            // return component, include key
+                            return <Link key={ id } to={`ads/${ id }`}>
+                                <Card title={ title }/>
                             </Link>;
                         })
                 }
