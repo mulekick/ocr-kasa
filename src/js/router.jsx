@@ -1,11 +1,10 @@
 /* eslint-disable no-shadow, node/no-unsupported-features/es-syntax */
 
 // import modules
-import React from "react";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
 // imported component must begin with an uppercase letter
-import Kasa from "./main.jsx";
+import Layout from "./layout.jsx";
 import Home from "./pages/home.jsx";
 import DetailsPage from "./pages/details.jsx";
 import AboutPage from "./pages/about.jsx";
@@ -54,9 +53,9 @@ const
         {
             path: `/`,
             // init / route
-            element: <Kasa />,
+            element: <Layout />,
             // init error handling page (all errors will be handled)
-            errorElement: <Kasa error={ true } />,
+            errorElement: <Layout error={ true } />,
             // each subroute will return the <main> element, which
             // solves to problem of wrapping multiple elements into
             // a single component ...

@@ -6,6 +6,7 @@ body {
     // remove default margin
     margin: 0 calc((100% - 1240px) / 2);
 
+    // enable vertical scrolling when footer overlays page contents ...
     > #root > div:first-of-type {
         margin-bottom: 180px;
     }

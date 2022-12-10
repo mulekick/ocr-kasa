@@ -1,5 +1,4 @@
 // import modules
-import React from "react";
 import {Outlet, Link} from "react-router-dom";
 import ErrorPage from "./pages/error.jsx";
 
@@ -9,7 +8,7 @@ import footer from "../img/logo-kasa-footer.png";
 
 const
     // init app
-    Kasa = props => {
+    Layout = props => {
         const
             // extract props
             {error} = props;
@@ -42,5 +41,5 @@ const
         </div>;
     };
 
-export default Kasa;
+export default Layout;
 

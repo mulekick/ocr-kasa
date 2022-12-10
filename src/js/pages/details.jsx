@@ -22,7 +22,7 @@ const
                     <User user={ host } rating={ rating } />
                 </div>
                 <div>
-                    <Accordion title="Description" text={ description } />
+                    <Accordion title="Description" text={ <p>{description}</p> } />
                     <Accordion title="Equipements" text={ equipments.map((x, i) => <p key={ String(i) }>{ x }</p>) } />
                 </div>
             </div>
