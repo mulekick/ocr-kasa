@@ -12,6 +12,7 @@
     },
     "devDependencies": {
         "@mulekick/eslint-config-muleslint": "^1.0.1",
+        "gh-pages": "^4.0.0",
         "sass": "^1.56.1"
     },
     "scripts": {
@@ -19,6 +20,8 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages --dist build --branch static --message \"rebuild\"",
         "live": "docker container run --rm -d --mount type=bind,source=$(realpath build),target=/content,ro=true -p 8080:80 mulekick/serve-static:latest > /tmp/static-container-id",
         "die": "docker container stop $(cat /tmp/static-container-id) && rm /tmp/static-container-id"
     },
@@ -41,5 +44,6 @@
     "author": "mulekick <moolekick@gmail.com> (https://github.com/mulekick)",
     "license": "MIT",
     "repository": {},
-    "bugs": {}
+    "bugs": {},
+    "homepage": "https://mulekick.github.io/ocr-kasa/"
 }

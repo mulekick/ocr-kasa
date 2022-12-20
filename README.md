@@ -5,7 +5,7 @@ npm uninstall --save @testing-library/jest-dom @testing-library/react @testing-l
 ```
 2. install project dev dependencies
 ```bash
-npm install --save-dev @mulekick/eslint-config-muleslint sass
+npm install --save-dev @mulekick/eslint-config-muleslint sass gh-pages
 ```
 3. install project dependencies
 ```bash

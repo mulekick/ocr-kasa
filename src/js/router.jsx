@@ -1,7 +1,7 @@
 /* eslint-disable no-shadow, node/no-unsupported-features/es-syntax */
 
 // import modules
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import {createHashRouter, RouterProvider} from "react-router-dom";
 
 // imported component must begin with an uppercase letter
 import Layout from "./layout.jsx";
@@ -48,8 +48,9 @@ const
             throw new Response(err.message, {status: 404});
         }
     },
-    // init router (components states are not persisted on route change ...)
-    router = createBrowserRouter([
+    // init router (use a hash router for github pages support)
+    // components states are not persisted on route change ...
+    router = createHashRouter([
         {
             path: `/`,
             // init / route
@@ -61,7 +62,6 @@ const
             // a single component ...
             children: [ {
                 // default outlet for route / (homepage)
-                // path: ``,
                 index: true,
                 element: <Home />,
                 // load ads list
