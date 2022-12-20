@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.b7255acb.css",
-    "main.js": "/static/js/main.fc4965e7.js",
-    "static/js/308.b35dc1cc.chunk.js": "/static/js/308.b35dc1cc.chunk.js",
-    "static/media/background-about.png": "/static/media/background-about.fce6fc3e9ed27433e9b0.png",
-    "static/media/background-home.png": "/static/media/background-home.efc1935eb81fc5e585f9.png",
-    "index.html": "/index.html",
-    "static/media/fa-chevron-up.svg": "/static/media/fa-chevron-up.ecf1488896136f153bb1ae871e39b72d.svg",
-    "static/media/fa-chevron-right.svg": "/static/media/fa-chevron-right.88153a5d119c2744ffe34dca1ef843df.svg",
-    "static/media/fa-chevron-left.svg": "/static/media/fa-chevron-left.19918a1634b1441a25ae0b50e6b1f85b.svg",
-    "static/media/star-empty.svg": "/static/media/star-empty.7e4ba6032d7d80ecc30aa389973cef95.svg",
-    "static/media/star-full.svg": "/static/media/star-full.6430150c126a3adf92c132c52c9c7428.svg",
-    "main.b7255acb.css.map": "/static/css/main.b7255acb.css.map",
-    "main.fc4965e7.js.map": "/static/js/main.fc4965e7.js.map"
+    "main.css": "/ocr-kasa/static/css/main.b7255acb.css",
+    "main.js": "/ocr-kasa/static/js/main.a093f531.js",
+    "static/js/308.b35dc1cc.chunk.js": "/ocr-kasa/static/js/308.b35dc1cc.chunk.js",
+    "static/media/background-about.png": "/ocr-kasa/static/media/background-about.fce6fc3e9ed27433e9b0.png",
+    "static/media/background-home.png": "/ocr-kasa/static/media/background-home.efc1935eb81fc5e585f9.png",
+    "index.html": "/ocr-kasa/index.html",
+    "static/media/fa-chevron-up.svg": "/ocr-kasa/static/media/fa-chevron-up.ecf1488896136f153bb1ae871e39b72d.svg",
+    "static/media/fa-chevron-right.svg": "/ocr-kasa/static/media/fa-chevron-right.88153a5d119c2744ffe34dca1ef843df.svg",
+    "static/media/fa-chevron-left.svg": "/ocr-kasa/static/media/fa-chevron-left.19918a1634b1441a25ae0b50e6b1f85b.svg",
+    "static/media/star-empty.svg": "/ocr-kasa/static/media/star-empty.7e4ba6032d7d80ecc30aa389973cef95.svg",
+    "static/media/star-full.svg": "/ocr-kasa/static/media/star-full.6430150c126a3adf92c132c52c9c7428.svg",
+    "main.b7255acb.css.map": "/ocr-kasa/static/css/main.b7255acb.css.map",
+    "main.a093f531.js.map": "/ocr-kasa/static/js/main.a093f531.js.map"
   },
   "entrypoints": [
     "static/css/main.b7255acb.css",
-    "static/js/main.fc4965e7.js"
+    "static/js/main.a093f531.js"
   ]
 }
